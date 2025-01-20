@@ -3,10 +3,10 @@
 * Automatically install [ComfyUI](https://github.com/comfyanonymous/ComfyUI) on AWS EC2 instance  
 * Expose ComfyUI endpoint("ComfyUIPotal" in cloudformation's Outputs) through EC2 public domain name with dedicated port  
 * You need to get ssh key-pair through "GetSSHKeyCommand" in cloudformation's Outputs first if you want to access EC2 instance
-* Default instance type is g5.2xlarge  
+* Default instance type is g6e.xlarge, you can change with others  
 
 # Build  
-* Make sure you follow the [AWS CDK Prerequisites](https://docs.aws.amazon.com/cdk/latest/guide/work-with.html#work-with-prerequisites) before you build the project.
+* Make sure you follow the [AWS CDK Prerequisites](https://docs.aws.amazon.com/cdk/v2/guide/prerequisites.html) before you build the project.
 * Clone this project and change the directory to the root folder of the project, and run below commands:
 ```bash
 $ npm install -g aws-cdk

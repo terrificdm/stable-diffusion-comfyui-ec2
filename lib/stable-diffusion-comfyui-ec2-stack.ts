@@ -34,7 +34,7 @@ export class StableDiffusionComfyuiEc2Stack extends cdk.Stack {
       `su ubuntu -c 'wget -P models/checkpoints https://huggingface.co/stabilityai/stable-diffusion-xl-refiner-1.0/resolve/main/sd_xl_refiner_1.0.safetensors'`,
       `su ubuntu -c 'wget -P models/vae https://huggingface.co/madebyollin/sdxl-vae-fp16-fix/resolve/main/sdxl_vae.safetensors'`,
       `su ubuntu -c 'wget -P models/checkpoints https://huggingface.co/playgroundai/playground-v2.5-1024px-aesthetic/resolve/main/playground-v2.5-1024px-aesthetic.fp16.safetensors'`,
-      `su ubuntu -c 'pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu121'`,
+      `su ubuntu -c 'pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu124'`,
       `su ubuntu -c 'pip install -r requirements.txt'`,
     );
 
@@ -47,7 +47,7 @@ export class StableDiffusionComfyuiEc2Stack extends cdk.Stack {
 
     const instance = new ec2.Instance(this, 'Instance', {
       vpc: vpc,
-      instanceType: ec2.InstanceType.of(ec2.InstanceClass.G5, ec2.InstanceSize.XLARGE2),
+      instanceType: ec2.InstanceType.of(ec2.InstanceClass.G6E, ec2.InstanceSize.XLARGE),
       machineImage: ubuntuLinux,
       blockDevices: [{
         deviceName: '/dev/sda1',
