@@ -27,8 +27,8 @@ $ cdk destroy
 ```
 
 # Notes  
-* ComfyUI files are under /home/ubuntu/ComfyUI directory  
 * The scripts will automatically download sdxl base and refiner models for you  
-* Default command in CDK scripts for running SD-ComfyUI is "nohup python main.py --listen --port 8080 > ./sd-comfyui.log 2>&1 &", you can kill that process and run your own  
+* ComfyUI files are under /home/ubuntu/ComfyUI directory  
+* Default command in CDK scripts for running SD-ComfyUI is `source .venv/bin/activate` `nohup python main.py --listen --port 8080 > ./sd-comfyui.log 2>&1 &`, you can kill that process and run your own. Remember to source venv first.  
 * You can use "tail -f /home/ubuntu/ComfyUI/sd-comfyui.log" to get real time logs for ComfyUI  
 * Regarding how to use ComfyUI, read its [official repo](https://github.com/comfyanonymous/ComfyUI)  
